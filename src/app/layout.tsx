@@ -1,4 +1,9 @@
+
 import './globals.css'
+import Header  from './components/Header'
+import ChakraWrapper from './components/chakraWrapper'
+import Pricing from './components/Pricing'
+import Features from './components/Features'
 
 export default function RootLayout({
   children,
@@ -7,12 +12,17 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      {/*
-        <head /> will contain the components returned by the nearest parent
-        head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
-      */}
       <head />
-      <body>{children}</body>
+      <body>
+      <ChakraWrapper>
+
+        <Header />
+        <Pricing />
+        <Features />
+        {children}
+        
+        </ChakraWrapper>
+        </body>
     </html>
   )
 }
